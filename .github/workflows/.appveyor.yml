@@ -6,7 +6,8 @@ branches:
   only:
     - master  # ветка git
 
-build: off  # будем использовать свой скрипт сборки
+build: 
+- chmod +x gradlew
 
 install:
   # Запускаем SUT,
