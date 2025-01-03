@@ -4,10 +4,9 @@ stack: jdk 11  # версия JDK
 
 branches:
   only:
-    - master  # ветка git
+    - main  # ветка git
 
-build: 
-- chmod +x gradlew
+build: off
 
 install:
   # Запускаем SUT,
