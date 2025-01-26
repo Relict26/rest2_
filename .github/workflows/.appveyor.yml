@@ -1,0 +1,28 @@
+image: Ubuntu2004
+stack: jdk 11
+
+branches:
+<<<<<<< HEAD:.appveyor.yml.gradle
+only:
+- main
+=======
+  only:
+    - main  # ветка git
+
+build: off
+>>>>>>> 3386a9e186bd67304e685a9c90c42a45d00b8365:.github/workflows/.appveyor.yml
+
+build: off
+install:
+- java -jar ./artifacts/app-mbank.jar &
+        - chmod +x gradlew
+
+build_script:
+<<<<<<< HEAD:.appveyor.yml.gradle
+- ./gradlew test --info
+=======
+  # Запускаем автотесты
+  # Для проектов на базе Selenide необходимо добавить параметр для запуска браузера
+  # в headless режиме -Dselenide.headless=true, параметр --info должен остаться
+  - ./gradlew test --info
+>>>>>>> 3386a9e186bd67304e685a9c90c42a45d00b8365:.github/workflows/.appveyor.yml
