@@ -1,11 +1,16 @@
-image: ubuntu:20.04 
+image: Ubuntu2004  # Используемый образ
 
-stages:
-  - build
+branches:
+  only:
+    - main  # Указываем ветку для сборки
 
 build:
-  stage: build
-  script:
-    - echo "Запуск пользовательского процесса сборки"
-    - chmod +x gradlew 
-    - ./gradlew build
+  project: false  # Указываем, что проект Visual Studio не используется
+
+install:
+  - chmod +x gradlew  # Добавляем права на выполнение
+
+build_script:
+  - echo "Starting build process..."
+  - ./gradlew build  # Выполняем сборку проекта
+
